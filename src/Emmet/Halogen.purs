@@ -42,8 +42,8 @@ renderWithAttributes name attributes children =
   where
     renderAttribute = case _ of
       HtmlId id → "HP.id " <> show id
-      HtmlClass c → "HP.class_ (HH.ClassName " <> show c <> ")"
-      HtmlClasses cs → "HP.classes (map HH.ClassName [ " <> intercalate ", " (map show cs) <> " ])"
+      HtmlClass c → "css [" <> show c <> "]"
+      HtmlClasses cs → "css [" <> intercalate ", " (map show cs) <> "]"
 
 renderNoAttributes ∷ String → List String → String
 renderNoAttributes name children
