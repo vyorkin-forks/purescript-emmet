@@ -25,7 +25,7 @@ renderHalogen ∷ HtmlBuilder → String
 renderHalogen =
   M.cata case _ of
     HtmlBuilderF nodes →
-      nodes <#> renderNode # intercalate ("\n")
+      nodes <#> renderNode # intercalate "\n"
 
 renderNode ∷ Node String → String
 renderNode {name, attributes, children} =
